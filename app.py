@@ -72,14 +72,13 @@ elif page == "Prediction":
 
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-   MODEL_PATH = os.path.join(BASE_DIR, "trained_model", "cancer_model.pkl")
-   SCALER_PATH = os.path.join(BASE_DIR, "trained_model", "scaler.pkl")
-   FEATURE_PATH = os.path.join(BASE_DIR, "trained_model", "feature_names.pkl")
+    MODEL_PATH = os.path.join(BASE_DIR, "trained_model", "cancer_model.pkl")
+    SCALER_PATH = os.path.join(BASE_DIR, "trained_model", "scaler.pkl")
+    FEATURE_PATH = os.path.join(BASE_DIR, "trained_model", "feature_names.pkl")
 
-    try:
-        model = joblib.load(MODEL_PATH)
-        scaler = joblib.load(SCALER_PATH)
-        feature_names = joblib.load(FEATURE_PATH)
+    model = joblib.load(MODEL_PATH)
+    scaler = joblib.load(SCALER_PATH)
+    feature_names = joblib.load(FEATURE_PATH)
 
     except Exception as e:
         st.error("❌ Model files not found.")
