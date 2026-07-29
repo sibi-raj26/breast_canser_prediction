@@ -72,9 +72,9 @@ elif page == "Prediction":
 
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-    MODEL_PATH = os.path.join(BASE_DIR,  "cancer_model.pkl")
-    SCALER_PATH = os.path.join(BASE_DIR, "trained_model", "scaler.pkl")
-    FEATURE_PATH = os.path.join(BASE_DIR, "trained_model", "feature_names.pkl")
+   MODEL_PATH = os.path.join(BASE_DIR, "trained_model", "cancer_model.pkl")
+   SCALER_PATH = os.path.join(BASE_DIR, "trained_model", "scaler.pkl")
+   FEATURE_PATH = os.path.join(BASE_DIR, "trained_model", "feature_names.pkl")
 
     try:
         model = joblib.load(MODEL_PATH)
