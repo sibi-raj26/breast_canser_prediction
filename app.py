@@ -6,6 +6,7 @@ import streamlit as st
 # ---------------------------------
 # Page Configuration
 # ---------------------------------
+
 st.set_page_config(
     page_title="Breast Cancer Prediction",
     page_icon="🩺",
@@ -15,6 +16,7 @@ st.set_page_config(
 # ---------------------------------
 # Sidebar
 # ---------------------------------
+
 st.sidebar.title("🩺 Navigation")
 
 page = st.sidebar.radio(
@@ -30,6 +32,7 @@ page = st.sidebar.radio(
 # ---------------------------------
 # Home Page
 # ---------------------------------
+
 if page == "Home":
 
     st.title("🩺 Breast Cancer Prediction System")
@@ -60,12 +63,12 @@ to predict whether a breast tumor is **Benign** or **Malignant**.
 - Pandas
 - NumPy
 - Joblib
-- Plotly
 """)
 
 # ---------------------------------
 # Prediction Page
 # ---------------------------------
+
 elif page == "Prediction":
 
     st.title("🔍 Breast Cancer Prediction")
@@ -76,9 +79,10 @@ elif page == "Prediction":
     SCALER_PATH = os.path.join(BASE_DIR, "trained_model", "scaler.pkl")
     FEATURE_PATH = os.path.join(BASE_DIR, "trained_model", "feature_names.pkl")
 
-    model = joblib.load(MODEL_PATH)
-    scaler = joblib.load(SCALER_PATH)
-    feature_names = joblib.load(FEATURE_PATH)
+    try:
+        model = joblib.load(MODEL_PATH)
+        scaler = joblib.load(SCALER_PATH)
+        feature_names = joblib.load(FEATURE_PATH)
 
     except Exception as e:
         st.error("❌ Model files not found.")
@@ -154,6 +158,7 @@ elif page == "Prediction":
 # ---------------------------------
 # Model Information
 # ---------------------------------
+
 elif page == "Model Information":
 
     st.title("📊 Model Information")
@@ -173,6 +178,7 @@ elif page == "Model Information":
 # ---------------------------------
 # About
 # ---------------------------------
+
 elif page == "About":
 
     st.title("ℹ️ About")
@@ -191,9 +197,8 @@ using a Logistic Regression Machine Learning model.
 - Pandas
 - NumPy
 - Joblib
-- Plotly
 
 ### Developer
 
-Your Name
+Vijay
 """)
